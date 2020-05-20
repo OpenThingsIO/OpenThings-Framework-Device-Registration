@@ -85,7 +85,7 @@ function devices_page($user) {
         </tr>
         </thead>
         <?php
-        $devices = $wpdb->get_results("SELECT * FROM $DEVICES_TABLE");
+        $devices = $wpdb->get_results($wpdb->prepare("SELECT * FROM $DEVICES_TABLE WHERE user_id=%d", $user->ID));
         foreach ($devices as $device) {
             ?>
             <tbody>
