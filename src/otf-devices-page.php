@@ -79,7 +79,7 @@ function devices_page($user) {
         <thead>
         <tr>
             <th>Device Type</th>
-            <th>Device Key</th>
+            <th>OpenThings Cloud Token</th>
             <th>Device Description</th>
 			<th>Actions</th>
         </tr>
