@@ -5,7 +5,7 @@ Plugin URI: https://github.com/openthingsio/OTF-Device-Registration
 Description: Allows users to register devices for the OpenThings Framework.
 Version: 0.0.0
 Author: Matthew Oslan
-License: MIT
+License: GPL v3
 */
 
 
