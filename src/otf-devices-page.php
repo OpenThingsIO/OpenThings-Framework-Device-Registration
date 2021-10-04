@@ -15,6 +15,14 @@ function devices_page($user) {
     global $DEVICES_TABLE, $wpdb;
     $DEVICE_TYPES = ['OpenGarage'];
     ?>
+    <!-- TODO move this to an external CSS file. -->
+    <style>
+        form:invalid > button[type='submit'] {
+          pointer-events: none;
+          opacity: 0.8;
+        }
+    </style>
+
 	<!-- TODO move this to an external JS file. -->
 	<script>
 		function confirmDelete(deviceKey) {
@@ -85,7 +93,7 @@ function devices_page($user) {
         </tr>
         </thead>
         <?php
-        $devices = $wpdb->get_results($wpdb->prepare("SELECT * FROM $DEVICES_TABLE WHERE user_id=%d", $user->ID));
+	$devices = $wpdb->get_results($wpdb->prepare("SELECT * FROM $DEVICES_TABLE WHERE user_id=%d", $user->ID));
         foreach ($devices as $device) {
             ?>
             <tbody>
@@ -104,8 +112,8 @@ function devices_page($user) {
     </table>
 
     <form action="." method="POST">
-        <input type="text" name="deviceDescription" placeholder="Device description">
-        <select name="deviceType">
+        <input type="text" name="deviceDescription" placeholder="Device description" required>
+        <select name="deviceType" required>
             <?php
             foreach ($DEVICE_TYPES as &$deviceType) {
                 ?>
