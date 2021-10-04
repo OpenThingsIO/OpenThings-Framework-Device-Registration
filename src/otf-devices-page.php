@@ -46,7 +46,7 @@ function devices_page($user) {
                 $success = $wpdb->insert($DEVICES_TABLE, [
                     'device_description' => $_POST['deviceDescription'],
                     'device_type' => $_POST['deviceType'],
-                    'device_key' => bin2hex(random_bytes(16)),
+                    'device_key' => 'OT'.bin2hex(random_bytes(15)),
                     'user_id' => $user->ID
                 ]);
 
